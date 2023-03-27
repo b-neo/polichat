@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<!--Developed by Nambin Kim, CAU Enlgish Education 15-->
+	<meta charset="utf-8">
+	<!--모바일 화면 설정-->
+	<meta name='viewport'
+		  content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<!--기타 설정-->
+	<meta name="google" value="notranslate">
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Pragma" content="no-cache" />
+
+	<title>AI 폴리챗</title>
+
+	<!--UI 스타일 파일-->
+	<link rel="stylesheet" type="text/css" href="css/ui.css">
+
+	<!--Jquery 라이브러리-->
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.mobile-1.5.0-rc1.min.js"></script>
+
+	<!--Javascript 파일-->
+	<!--자연어 채팅 기능-->
+	<script type="text/javascript" src="scripts/chatting.js" charset='euc-kr'></script>
+	<!--GPS 지도 연동 기능-->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=47adee1fb68410093892ca673e52d922&libraries=services,clusterer"></script>
+	<script type="text/javascript" src="scripts/kakaomap.js" charset='euc-kr'></script>
+	<!--메뉴 동작 기능-->
+	<script type="text/javascript" src="scripts/menu.js" charset='euc-kr'></script>
+
+	<!--Initialize-->
+	<script type="text/javascript">
+		$(function () {
+			//초기 화면 세팅
+			$('#menu-body').hide(); // menu창 숨기기
+			gpscheck();
+		});
+	</script>
+
+
+</head>
+ <body>
+	<div class="chatroom"> 
+		<div class="chat-head">
+			<img id="logo" src="./image/mark.png">
+			<p>AI 폴리챗</p>
+		</div>
+		<div class="chat-body">
+		<div id="map" style="display:none;"></div>
+		</div>
+		<div class="chat-footer">
+			<img src="./image/menu.png" id="menu">
+			<img src="./image/send.png" id="send">
+			<input type="text" id="user-input" placeholder="궁금한 것을 물어보세요." data-role="none"></input>
+			<div id="menu-body"></div>
+		</div>
+	</div>
+ </body>
+</html>
